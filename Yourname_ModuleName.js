@@ -5,6 +5,6 @@ module.exports = {
     },
     // Explain what function B does
     functionB() {
-        console.log("Hello function B test");
+        console.log("Hello function B tttest");
     }
 }
