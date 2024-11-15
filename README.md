@@ -37,7 +37,7 @@ const facilityList = this.facilities.filter(f => f.location === locationID);
 ```
 It returns a list of facilities with their IDs and names. If none are found, it returns an appropriate message stating that there are no facilities found in the location entered.
 
-# Check for Availability - checkAvailability(facilityID, timeslotID)
+## Check for Availability - checkAvailability(facilityID, timeslotID)
 The checkAvailability function checks if a specific facility is available at a given timeslot using the facilityID and timeslotID.
 
 First, it verifies if the facilityID and timeslotID entered exist.
@@ -53,7 +53,7 @@ const isBooked = this.bookings.some(
 
 It then return a message of whether the facility is available during that timeslot or not.
 
-# Book Facility - bookFacility(studentID, facilityID, timeslotID)
+## Book Facility - bookFacility(studentID, facilityID, timeslotID)
 The bookFacility function books a facility for a student at a specific timeslot using the studentID, facilityID and timeslotID.
 
 Firstly, it checks for the availability of the facility.
@@ -72,7 +72,7 @@ this.bookings.push({
 
 After successfully booking a slot, it then returns a confirmation message.
 
-# View Bookings - viewBookings()
+## View Bookings - viewBookings()
 The viewBookings function lists all the existing bookings.
 
 If there are no bookings, it returns a message stating so.
@@ -88,7 +88,7 @@ return this.bookings.map(booking => {
 }).join("\n");
 ```
 
-# Cancel Booking - cancelBooking(studentID, facilityID, timeslotID)
+## Cancel Booking - cancelBooking(studentID, facilityID, timeslotID)
 The cancelBooking function cancels a specific booking for a student using the studentID, facilityID, and timeslotID.
 
 It first verifies that the student, facility, and timeslot IDs are valid.
@@ -111,7 +111,7 @@ this.bookings.splice(bookingIndex, 1);
 
 Finally it will return a cancellation confirmation message or an error message if no booking is found.
 
-# Get User's Booking History - getUserBookingHistory(studentID)
+## Get User's Booking History - getUserBookingHistory(studentID)
 The getUserBookingHistory function retrieves all bookings made by a specific student using the studentID.
 
 It filters the bookings list based on the studentID.
