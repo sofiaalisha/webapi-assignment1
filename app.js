@@ -17,13 +17,13 @@ console.log(service.bookFacility("123456A", "F4", "T4"));
 console.log(service.bookFacility("123456A", "F5", "T4"));
 console.log("--------------------------------");
 
+//Users can see a list of their past bookings
+console.log(service.getUserBookingHistory("123456A"));
+console.log("--------------------------------");
+
 //Cancel facility booking with student ID, facility ID and timeslot ID
 console.log(service.cancelBooking("456789D", "F4", "T4"));
 console.log(service.cancelBooking("567890E", "F2", "T1"));
-console.log("--------------------------------");
-
-//Users can see a list of their past bookings
-console.log(service.getUserBookingHistory("123456A"));
 console.log("--------------------------------");
 
 //Moderators can view a list of all bookings
