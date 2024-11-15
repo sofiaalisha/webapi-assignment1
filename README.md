@@ -124,10 +124,10 @@ It will finally display the details of each booking for that student.
 # References
 Provide the references that you have used to support your assignment
 
-Learnt the methods used in the functions such as .find and .filter
+Learnt the methods used in the functions such as .find and .filter.
 https://www.w3schools.com/nodejs/nodejs_mongodb_find.asp
 
-Learnt how to use the methods used in the functions with node.js such as .find, .some etc
+Learnt how to use the methods used in the functions with node.js such as .find, .some etc.
 https://chatgpt.com/
 
 For some tips in formatting text in readme file, refer to https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax

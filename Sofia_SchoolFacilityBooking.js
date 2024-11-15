@@ -1,4 +1,10 @@
 //Business Service: School Facility Booking
+//Check availability of facilities
+//Book a facility
+//Cancel booking
+//Allow users to view their booking history
+//Allow administrators to view all bookings
+//Search for existing facilities
 
 module.exports = {
     "locations": [
@@ -40,6 +46,7 @@ module.exports = {
         {studentID: "567890E", studentName: "Ian Salvatore"},
     ],
 
+    //Check for availability of facility at a specific timeslot
     checkAvailability(facilityID, timeslotID) {
         const facility = this.facilities.find(f => f.id === facilityID);
         if (!facility) {
@@ -63,6 +70,7 @@ module.exports = {
         }
     },
 
+    //Book a facility at a specific timeslot under a studentID
     bookFacility(studentID, facilityID, timeslotID) {
         const isAvailable = this.checkAvailability(facilityID, timeslotID);
 
@@ -94,6 +102,7 @@ module.exports = {
         return `Booking Successful: ${facility.name} for ${student.studentName} (${student.studentID}) at ${timeslot.time}. `;
     },
 
+    //Allow administrators to view list of all bookings
     viewBookings() {
         if (this.bookings.length === 0) {
             return "No bookings avauilable. ";
@@ -124,6 +133,7 @@ module.exports = {
         }).join("\n");
     },
 
+    //Cancel facility booking
     cancelBooking(studentID, facilityID, timeslotID) {
         const student = this.students.find(s => s.studentID === studentID);
         if (!student) {
@@ -154,6 +164,7 @@ module.exports = {
         return `Booking cancelled for ${student.studentName} at ${facility.name} from ${timeslot.time}. `;
     },
 
+    //Allow users to view their booking history
     getUserBookingHistory(studentID) {
         const userBookings = this.bookings.filter(booking => booking.studentID === studentID);
 
@@ -184,6 +195,7 @@ module.exports = {
         }).join("\n");
     },
 
+    //Search for existing school facilities
     searchFacilities(locationID) {
         const location = this.locations.find(l => l.id === locationID);
 
