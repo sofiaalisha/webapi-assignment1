@@ -1,11 +1,11 @@
 # Assignment 1
 
-This is a **School Facility Booking API** for managing the reservation, availability, and usage of various school facilities. It allows users to search for school facilities, check the availability of the facility, book the facility, cancel the booking, view their booking history, and allows moderators to view all bookings.
+This is a **School Facility Booking API** for managing the reservation, availability, and usage of various school facilities. It allows users to search for school facilities, check the availability of the facility, book the facility, cancel the booking, view their booking history, and allows moderators to view all bookings. Each function is designed to manage the system, helping users and administrators interact with bookings efficiently.
 
 ## Set-up
 1. Clone this repository
 2. Install Node.js
-3. Run this node project in this folder's integrated terminal
+3. Run the project by entering this line of code in this folder's integrated terminal
 ```
 node app.js
 ```
@@ -18,20 +18,72 @@ node app.js
 5. Users can see a list of their past bookings
 6. Moderators can view a list of all bookings
 
-# Search for Facilities
-The searchFacilities function is designed to find and list all the existing school facilities. The .find method in JavaScript is used to search through an array to locate the first element that meets a specific condition.
 
-Firstly, this function checks if the location ID that the user entered exists. 
+# Search for Facilities
+The searchFacilities function is designed to find and list all the existing school facilities in a specific location.
+
+Firstly, this function verifies if the location ID that the user entered exists.
+The .find method in JavaScript is used to search through an array to locate the first element that meets a specific condition.
 ```
     const location = this.locations.find(l => l.id === locationID);
     if (!location) {
         return `Location with ID does not exist. `;
     }
 ```
-The function then uses the .filter method to create an array of elements from the original array that meets the specified condition.
+It then retrieves all facilities under the specified location.
+The .filter method is used to create an array of elements from the original array that meets the specified condition.
 ```
 const facilityList = this.facilities.filter(f => f.location === locationID);
 ```
+It returns a list of facilities with their IDs and names. If none are found, it returns an appropriate message.
+
+# Check for Availability
+The checkAvailability function checks if a specific facility is available at a given timeslot.
+
+First, it verifies if the facilityID and timeslotID exist in the list.
+
+It then checks if there is already a booking for that facility and timeslot.
+
+It then returns a message of whether the facility is available during that timeslot or not.
+
+# Book Facility
+The bookFacility function books a facility for a student at a specific timeslot.
+
+Firstly, it checks for the availability of the facility.
+
+Then it ensures that the studentID, facilityIDm and timeslotID are valid.
+
+After validation, the booking will be added to the "bookings".
+
+After successful booking, it then returns a confirmation message.
+
+# View Bookings
+The viewBookings function lists all the existing bookings.
+
+If there are no bookings, it returns a message stating so.
+
+For each booking, it fetches the facility, timeslot, and student details.
+
+It will then display the booking information including the facility name, time, student name, and location.
+
+# Cancel Booking
+The cancelBooking function cancels a specific booking for a student.
+
+It first verifies that the student, facility, and timeslot IDs are valid.
+
+It will then remove the booking after checking that it exists in the bookings array.
+
+Finally it will return a cancellation confirmation message or an error message if no booking is found.
+
+# Get User's Booking History
+The getUserBookingHistory function retrieves all bookings made by a specific student.
+
+It filters the bookings list based on the student ID.
+
+If no bookings are found, it returns a message stating so.
+
+It will finally display the details of each booking for that student.
+
 
 
 
